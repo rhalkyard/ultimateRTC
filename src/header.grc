@@ -1,0 +1,8 @@
+HEADER AUTO_EXEC "UltimateRTC" "UltimateRTC" "V1.0" {
+	dostype USR
+	author "Richard Halkyard"
+	info "Set GEOS clock from 1541 Ultimate II/II+ RTC"
+	mode any
+	icon "UltimateRTC.icon.bin"
+}
+ 

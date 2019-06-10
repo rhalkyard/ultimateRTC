@@ -1,0 +1,9 @@
+obj/
+dep/
+*.cvt
+*.dbg
+*.lbl
+*.map
+*.d64
+.DS_Store
+.vscode/
