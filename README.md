@@ -45,6 +45,10 @@ If disk images called `GEOS64.D64` and `GEOS128.D64` (as available at
 bootdisks` (or `make boot64.d64` and `make boot128.d64`) will use them as
 templates to produce GEOS boot disks with UltimateRTC installed as an auto-exec.
 
+For debugging the date-parsing and date-setting logic in an emulator without a
+1541U2, the `make` option `MOCK=1` builds a version that skips all the device
+IO, and parses and sets the date from a mock date string.
+
 ## A note on Y2K compatibility
 
 The GEOS programmers manual says that the year is represented as an offset from

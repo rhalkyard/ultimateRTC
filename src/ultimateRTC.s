@@ -54,12 +54,16 @@ start:
 		jmp @errexit
 
 @parse_ok:
-		jsr InitForIO
 		; setup CIA#1 time-of-day clock
+		jsr InitForIO
 		lda mhour
 		cmp #$13
 		bcc @am
+		php
+		sei
+		sed
 		sbc #$12
+		plp
 		ora #$80		; high bit of CIA hour register is AM/PM flag
 @am:	sta CIA1_TODHR
 		MoveB mmin, CIA1_TODMIN
@@ -236,4 +240,12 @@ mday:   .byte 0
 mhour:  .byte 0
 mmin:	.byte 0
 msec:	.byte 0
+
+.if !.defined(MOCK)
 buf:	.res BUFSIZE
+.else
+		.segment "DATA"
+		.define MOCKDATE "2019/06/12 20:48:04"
+buf:	.byte MOCKDATE, 0
+		.res BUFSIZE - .strlen(MOCKDATE)
+.endif
