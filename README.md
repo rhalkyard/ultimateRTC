@@ -31,7 +31,7 @@ The following tools are required, and must be on your default path
 - `make`
 - [CC65](https://github.com/cc65/cc65) version 2.18 or newer
 - [VICE](http://vice-emu.sourceforge.net) - in particular, the `c1541` tool
-- [ImageMagick](https://imagemagick.org)
+- [ImageMagick](https://imagemagick.org) - only needed if editing the icon image
 
 With all these tools on your path, all you need to do is run `make`, which will
 produce both a standalone `.cvt` file for use with CONVERT, and a `.d64` disk
