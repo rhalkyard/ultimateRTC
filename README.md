@@ -10,8 +10,8 @@ copied to your GEOS boot disk. Alternatively, you can double-click to run it
 after startup like a normal application.
 
 If the cartridge is not present, or the clock cannot be read for whatever
-reason, an error message will be briefly shown, but startup will continue with
-the clock left untouched.
+reason, an error message will be shown, but after it is dismissed, startup 
+will continue with the clock left untouched.
 
 Note that this tool does not propagate clock changes back from GEOS to the
 Ultimate II - the Ultimate II clock must still be set using its configuration
