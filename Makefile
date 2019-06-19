@@ -3,13 +3,11 @@ CC = cl65
 
 BINDIR = bin
 OBJDIR = obj
-RESOBJ = $(OBJDIR)/res
+RESOBJ = res
 DEPDIR = dep
 SRCDIR = src
 
 IMGTYPE := d64
-
-MOCK := 
 
 CFLAGS = -g -t geos-cbm -T --listing $(basename $@).lst --bin-include-dir $(RESOBJ) --create-dep $(DEPDIR)/$(notdir $@).dep
 ASFLAGS = -g -t geos-cbm -I ./inc/ --bin-include-dir $(RESOBJ) --create-dep $(DEPDIR)/$(notdir $@).dep --listing $(basename $@).lst
@@ -17,10 +15,10 @@ LDFLAGS = -t geos-cbm -Ln $(basename $@).lbl --mapfile $(basename $@).map -Wl --
  
 PRG = ultimateRTC
 SRCS = header.grc ultimateRTC.s ucommand.s
-BITMAPS = ultimateRTC.xcf
+BITMAPS = 
 ICONS = ultimateRTC.xcf
 
-ifneq (MOCK,)
+ifneq ($(MOCK),)
 CFLAGS += -DMOCK
 ASFLAGS += -DMOCK
 endif
